@@ -22,4 +22,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/cafe', [CafeController::class, 'index'])->name('cafe');
+Route::get('/cafe/user/{user}', [CafeController::class, 'index'])->name('cafe');
