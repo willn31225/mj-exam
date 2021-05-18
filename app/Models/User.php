@@ -43,7 +43,7 @@ class User extends Authenticatable
 
     public function beverages()
     {
-        $this->hasMany('App\Models\Beverage');
+        return $this->belongsToMany('App\Models\Beverage');
     }
 
 }

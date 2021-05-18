@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/beverages', 'App\Http\Controllers\BeverageController@index')->name('get-beverages');
 Route::get('/beverages/{id}', 'App\Http\Controllers\BeverageController@show')->name('get-single-beverage');
+
+Route::get('/user/{user}/drink/{beverage}', 'App\Http\Controllers\UserController@drink')->name('drink-beverages');
+Route::get('/user/{user}/consumed', 'App\Http\Controllers\UserController@consumedBeverages')->name('consumed-beverages');

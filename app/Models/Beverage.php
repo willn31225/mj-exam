@@ -13,6 +13,6 @@ class Beverage extends Model
 
     public function users()
     {
-        $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 }
