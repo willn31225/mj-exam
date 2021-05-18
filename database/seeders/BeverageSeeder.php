@@ -14,7 +14,7 @@ class BeverageSeeder extends Seeder
      */
     public function run()
     {
-        Beverage::createMany([
+        $beverages = [
             [
                 'name' => 'Monster Ultra Sunrise',
                 'caffeine_level' => 75
@@ -35,6 +35,10 @@ class BeverageSeeder extends Seeder
                 'name' => '5 Hour Energy',
                 'caffeine_level' => 200
             ],
-        ]);
+        ];
+
+        foreach ($beverages as $beverage) {
+            Beverage::create($beverage);
+        }
     }
 }

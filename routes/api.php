@@ -14,12 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-
-Route::group(['prefix' => 'api/beverages', 'middleware' => 'auth:api'], function () {
-    Route::get('/', 'BeverageController@index')->name('get-beverages');
-    Route::get('/{id}', 'BeverageController@show')->name('get-single-beverage');
-});
+Route::get('/beverages', 'App\Http\Controllers\BeverageController@index')->name('get-beverages');
+Route::get('/beverages/{id}', 'App\Http\Controllers\BeverageController@show')->name('get-single-beverage');

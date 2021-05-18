@@ -11,12 +11,7 @@ class UserController extends Controller
 
     }
 
-    public function getCaffeineLevel()
-    {
-
-    }
-
-    public function getConsumedBeverages()
+    public function consumed()
     {
 
     }
