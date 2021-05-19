@@ -46,4 +46,9 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Beverage');
     }
 
+    public function reset()
+    {
+        \DB::table('beverage_user')->delete();
+    }
+
 }

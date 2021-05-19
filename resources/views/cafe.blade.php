@@ -3,6 +3,14 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px;">
+    <div class="row">
+        <div class="col-2 btn-warning reset" style="margin: 5px;">
+            Reset
+        </div>
+    </div>
+</div>
+
+<div class="container" style="padding-top: 100px;">
     <h4>Cafe Drinks</h4>
     <div class="row">
         @foreach ($beverages as $beverage)
@@ -34,8 +42,16 @@
 
 <script>
     $(document).ready(function() {
+        var caffeineLevel = {{ $consumedBeverages['caffeine_level'] }}
+        if (caffeineLevel >= 500) {
+            alert("You've reached your caffeine limit");
+        }
         $(".beverage").click(function() {
             $.get("{{ @url('/api/user/' . $user->id . '/drink') }}" + '/' + this.id);
+            window.location.reload();
+        });
+        $(".reset").click(function() {
+            $.get("{{ @url('/api/user/' . $user->id . "/reset") }}");
             window.location.reload();
         });
     });

@@ -24,4 +24,9 @@ class UserController extends Controller
             'caffeine_level' => $user->beverages()->sum('caffeine_level')
         ];
     }
+
+    public function reset(User $user)
+    {
+        $user->reset();
+    }
 }

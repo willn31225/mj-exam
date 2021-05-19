@@ -19,3 +19,4 @@ Route::get('/beverages/{id}', 'App\Http\Controllers\BeverageController@show')->n
 
 Route::get('/user/{user}/drink/{beverage}', 'App\Http\Controllers\UserController@drink')->name('drink-beverages');
 Route::get('/user/{user}/consumed', 'App\Http\Controllers\UserController@consumedBeverages')->name('consumed-beverages');
+Route::get('/user/{user}/reset', 'App\Http\Controllers\UserController@reset')->name('reset-consumed-beverages');
