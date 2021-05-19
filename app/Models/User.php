@@ -11,6 +11,8 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public $caffeineLimit = 500;
+
     /**
      * The attributes that are mass assignable.
      *

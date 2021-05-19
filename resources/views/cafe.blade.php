@@ -18,6 +18,8 @@
             {{ $beverage['name'] }}
             <br />
             {{ $beverage['caffeine_level'] }} g Caffeine
+            <br />
+            You can drink <b>{{ floor(($user->caffeineLimit - $consumedBeverages['caffeine_level']) / $beverage['caffeine_level']) }}</b> more
         </div>
         @endforeach
     </div>
@@ -43,7 +45,7 @@
 <script>
     $(document).ready(function() {
         var caffeineLevel = {{ $consumedBeverages['caffeine_level'] }}
-        if (caffeineLevel >= 500) {
+        if (caffeineLevel >= {{ $user->caffeineLimit }}) {
             alert("You've reached your caffeine limit");
         }
         $(".beverage").click(function() {
